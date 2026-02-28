@@ -1,13 +1,13 @@
 const http = require("http");
 
 const PORT = process.env.PORT || 3000;
-const VERSION = "v2";
+const VERSION = "v3";
 
 const server = http.createServer((req, res) => {
   res.writeHead(200, { "Content-Type": "application/json" });
   res.end(JSON.stringify({
     version: VERSION,
-    message: "Push-to-deploy works! Auto-rebuilt from GitHub webhook.",
+    message: "v3 — webhook-triggered rebuild confirmed",
     timestamp: new Date().toISOString(),
     features: ["auto-deploy", "webhook-triggered", "zero-downtime"],
   }));
